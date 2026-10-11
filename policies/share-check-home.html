@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Share Check の使い方とデータの取り扱いについて。Google資料リンクの共有範囲と役割を確認するChrome拡張機能です。">
+  <title>Share Check | 資料リンク共有チェック</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <h1>Share Check <span aria-hidden="true">/</span> 資料リンク共有チェック</h1>
+  <p class="lead">Google資料リンクの共有範囲と役割を、送信前に確認します。</p>
+  <p>許可したWebページの入力欄に貼られたGoogleスプレッドシート、ドキュメント、スライドのURLを検出し、Google接続の設定後に取得できる共有範囲と役割を表示するChrome拡張機能です。</p>
+
+  <h2>使い方</h2>
+  <ol>
+    <li><strong>サイトを許可します。</strong> Chrome拡張機能の設定で、使うサイトを個別に許可するか、すべてのHTTP(S)サイトを許可します。Chromeの確認画面で承認してください。許可後にページの再読み込みが必要な場合があります。</li>
+    <li><strong>Googleアカウントを接続します。</strong> 拡張機能の設定で「Googleに接続」を押し、照会に使うアカウントを選びます。Google接続が未設定と表示される場合は、認証設定が終わるまで実資料の共有情報を取得できません。</li>
+    <li><strong>資料URLを入力します。</strong> 許可したWebページの入力欄へ、対応するGoogle資料の通常URLを貼り付けます。</li>
+    <li><strong>拡張機能アイコンを押します。</strong> 資料ごとの共有範囲と役割、確認アカウント・日時、取得状態を確認します。必要に応じて「再確認」を押してください。</li>
+  </ol>
+
+  <h2>表示する内容</h2>
+  <ul>
+    <li>リンク共有、組織内共有、特定の人、Googleグループなどの共有経路を分けて表示します。</li>
+    <li>閲覧のみ、コメント可、編集可など、取得できた役割を共有範囲ごとに表示します。</li>
+    <li>取得中、一部取得、取得失敗、未確認を区別します。取得できない情報を推測して表示しません。</li>
+  </ul>
+  <p>表示はGoogleから取得できた共有設定の説明です。資料へアクセスできることを保証する機能ではありません。共有設定の変更やメール送信は行いません。</p>
+
+  <h2>データの取り扱い</h2>
+  <p>入力欄の文章全体や資料本文を保存・送信する機能はありません。検出した資料IDと必要なリソースキーを、Google Drive APIへHTTPSで直接照会します。取得した共有情報と確認状態はブラウザ内で扱い、開発者のサーバーへ送信する機能はありません。Google接続を解除すると照会結果と一時状態を消去します。</p>
+  <p>取得する情報、保存期間、Google接続、利用者による管理方法の詳細は、<a href="https://itohenthunagi.github.io/chrome-extension-privacy-policies/policies/share-check.html">Share Check プライバシーポリシー</a>をご確認ください。</p>
+
+  <h2>お問い合わせ</h2>
+  <p>不具合や問い合わせは<a href="https://github.com/itohenthunagi/chrome-extension-privacy-policies/issues">GitHub Issues</a>へお寄せください。アクセストークンや非公開資料の内容を記載しないでください。</p>
+</body>
+</html>
